@@ -1,10 +1,12 @@
 package main
 
 import (
-	"io"
 	"log"
 	"net/http"
 	"net/url"
+	"os"
+	"os/exec"
+	"strings"
 )
 
 func main() {
@@ -14,7 +16,16 @@ func main() {
 			http.Error(rw, "Bad Request", 400)
 		}
 
-		io.WriteString(rw, query)
+		dotCommand := exec.Command("dot", "-Tsvg")
+		dotCommand.Stdin = strings.NewReader(query)
+		dotCommand.Stdout = rw
+		dotCommand.Stderr = os.Stderr
+
+		err = dotCommand.Run()
+		if err != nil {
+			http.Error(rw, err.Error(), 500)
+			return
+		}
 	})
 
 	log.Println(http.ListenAndServe(":9292", nil))

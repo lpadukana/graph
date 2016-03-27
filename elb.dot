@@ -1,0 +1,5 @@
+digraph http {
+  browser->elb[color=red]
+  browser->dns[color=blue]
+  elb->{node1,node2,node3}[color=green]
+}
