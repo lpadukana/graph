@@ -39,5 +39,6 @@ func main() {
 
 	http.HandleFunc("/diagnostic/status/diagnosis", func(rw http.ResponseWriter, r *http.Request) {})
 
+	log.Println("Server starting...")
 	log.Println(http.ListenAndServe(":9292", nil))
 }
