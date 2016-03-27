@@ -12,4 +12,5 @@ Graphviz as a service
   * This will start the http server at port 9292
 * Use the endpoint
   * `curl -G -v "http://localhost:9292/dot/to/svg" --data-urlencode "digraph{a->{1,2,3}}"`
-  * `curl -G -v "http://localhost:9292/dot/to/svg" --data-urlencode "@elb.dot"`
+  * `curl -G -v "http://localhost:9292/dot/to/svg" --data-urlencode "@examples/service.dot"`
+  * `curl -G -v "http://localhost:9292/dot/to/png" --data-urlencode "@examples/by-two.dot"`

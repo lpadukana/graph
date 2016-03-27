@@ -1,0 +1,20 @@
+graph{
+  node[shape=record]
+  a[label="
+    {one|
+      {two|
+        {three|
+          {four|
+            {five|
+              {six|
+                {seven|
+                  {eight|nine}
+                }
+              }
+            }
+          }
+        }
+      }
+    }"
+  ]
+}

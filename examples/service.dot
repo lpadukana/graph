@@ -1,0 +1,5 @@
+digraph service {
+  browser->dns[color=blue]
+  browser->lb[color=red]
+  lb->{node1,node2,node3}[color=green]
+}
